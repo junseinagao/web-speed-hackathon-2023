@@ -49,7 +49,6 @@ export default defineConfig(async ({ mode }) => {
           splitVendorChunkPlugin(),
         ],
       },
-      sourcemap: mode === 'production' ? false : 'inline',
       target: 'esnext',
     },
     plugins: [
