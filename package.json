@@ -7,7 +7,7 @@
     "start:server": "nodemon --watch src/server --ext 'ts,tsx' --exec 'ts-node src/server'",
     "build": "npm-run-all -s build:tsc build:vite",
     "build:tsc": "tsc",
-    "build:vite": "cross-env NODE_ENV=development vite build",
+    "build:vite": "cross-env NODE_ENV=production vite build",
     "build:vite:analyze": "pnpm build:vite --mode analyze",
     "build:analyze": "npm-run-all -s build:tsc build:vite:analyze",
     "format": "npm-run-all -s format:*",
