@@ -26,7 +26,7 @@ export default defineConfig(async ({ mode }) => {
     build: {
       assetsInlineLimit: 4096,
       cssCodeSplit: true,
-      minify: 'esbuild',
+      minify: mode === 'production' ? 'esbuild' : false,
       rollupOptions: {
         plugins: [
           mode === 'analyze' &&
