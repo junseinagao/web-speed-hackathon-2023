@@ -39,13 +39,13 @@ export const apolloClient = new ApolloClient({
       fetchPolicy: 'network-only',
     },
     query: {
-      fetchPolicy: 'network-only',
+      fetchPolicy: 'cache-first',
     },
     watchQuery: {
-      fetchPolicy: 'network-only',
+      fetchPolicy: 'cache-and-network',
     },
   },
   link,
-  queryDeduplication: false,
+  queryDeduplication: true,
   uri: '/graphql',
 });
