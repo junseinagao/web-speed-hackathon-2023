@@ -12,7 +12,7 @@ type Props = {
 export const Layout: FC<Props> = ({ children }) => (
   <>
     <Header />
-    <main className={styles.container()}>{children}</main>
+    <main className={styles.container}>{children}</main>
     <Footer />
   </>
 );

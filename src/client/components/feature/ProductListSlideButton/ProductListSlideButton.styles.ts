@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 
-export const container = () => css`
+export const container = css`
   background: #e5e5e5;
   border-radius: 100%;
   cursor: pointer;
@@ -11,7 +11,7 @@ export const container = () => css`
   width: 36px;
 `;
 
-export const container__disabled = () => css`
+export const container__disabled = css`
   cursor: default;
   opacity: 0.5;
 `;

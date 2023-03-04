@@ -29,10 +29,10 @@ export const NotFound: FC = () => {
         <title>ページが見つかりませんでした</title>
       </Helmet>
       <Layout>
-        <div className={styles.container()}>
-          <div className={styles.inner()}>
-            <p className={styles.mainParagraph()}>ページが存在しません</p>
-            <p className={styles.subParagraph()}>Not Found</p>
+        <div className={styles.container}>
+          <div className={styles.inner}>
+            <p className={styles.mainParagraph}>ページが存在しません</p>
+            <p className={styles.subParagraph}>Not Found</p>
           </div>
         </div>
       </Layout>

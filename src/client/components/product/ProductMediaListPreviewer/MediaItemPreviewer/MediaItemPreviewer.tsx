@@ -16,7 +16,7 @@ export const MediaItemPreviewer: FC<Props> = ({ file }) => {
   const type = getMediaType(file.filename);
 
   return (
-    <div className={styles.container()}>
+    <div className={styles.container}>
       {type === 'image' && <Image fill src={file.filename} />}
       {type === 'video' && (
         <GetDeviceType>
@@ -26,9 +26,9 @@ export const MediaItemPreviewer: FC<Props> = ({ file }) => {
               controls
               muted
               playsInline
-              className={classNames(styles.video(), {
-                [styles.video__desktop()]: deviceType === DeviceType.DESKTOP,
-                [styles.video__mobile()]: deviceType === DeviceType.MOBILE,
+              className={classNames(styles.video, {
+                [styles.video__desktop]: deviceType === DeviceType.DESKTOP,
+                [styles.video__mobile]: deviceType === DeviceType.MOBILE,
               })}
               src={file.filename}
             />

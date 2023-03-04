@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 
-export const inner = () => css`
+export const inner = css`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -8,34 +8,34 @@ export const inner = () => css`
   padding: 24px;
 `;
 
-export const header = () => css`
+export const header = css`
   display: flex;
   justify-content: space-between;
 `;
 
-export const heading = () => css`
+export const heading = css`
   font-size: 24px;
 `;
 
-export const switchToSignUpButton = () => css`
+export const switchToSignUpButton = css`
   color: #3ba175;
 `;
 
-export const form = () => css`
+export const form = css`
   display: grid;
   gap: 24px;
 `;
 
-export const inputList = () => css`
+export const inputList = css`
   display: grid;
   gap: 16px;
 `;
 
-export const submitButton = () => css`
+export const submitButton = css`
   justify-self: center;
 `;
 
-export const error = () => css`
+export const error = css`
   color: #b00020;
   font-size: 0.875rem;
   line-height: 1;

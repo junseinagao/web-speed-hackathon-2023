@@ -14,15 +14,15 @@ export const Footer: FC = () => {
     <GetDeviceType>
       {({ deviceType }) => {
         return (
-          <footer className={styles.container()}>
+          <footer className={styles.container}>
             <ul
-              className={classNames(styles.itemList(), {
-                [styles.itemList__desktop()]: deviceType === DeviceType.DESKTOP,
-                [styles.itemList__mobile()]: deviceType === DeviceType.MOBILE,
+              className={classNames(styles.itemList, {
+                [styles.itemList__desktop]: deviceType === DeviceType.DESKTOP,
+                [styles.itemList__mobile]: deviceType === DeviceType.MOBILE,
               })}
             >
               {FOOTER_LINK_ITEMS.map((item) => (
-                <li key={item} className={styles.item()}>
+                <li key={item} className={styles.item}>
                   {item}
                 </li>
               ))}

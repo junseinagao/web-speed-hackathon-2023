@@ -7,8 +7,8 @@ type Props = Omit<ComponentProps<'input'>, 'className'> & {
 };
 
 export const TextInput: FC<Props> = ({ label, ...rest }) => (
-  <label className={styles.container()}>
+  <label className={styles.container}>
     {label}
-    <input className={styles.input()} {...rest} />
+    <input className={styles.input} {...rest} />
   </label>
 );

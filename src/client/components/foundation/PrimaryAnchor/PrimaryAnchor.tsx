@@ -15,9 +15,9 @@ type Props = {
 export const PrimaryAnchor: FC<Props> = ({ children, href, size }) => (
   <Anchor href={href}>
     <span
-      className={classNames(styles.inner(), {
-        [styles.container__lg()]: size === 'lg',
-        [styles.container__base()]: size === 'base',
+      className={classNames(styles.inner, {
+        [styles.container__lg]: size === 'lg',
+        [styles.container__base]: size === 'base',
       })}
     >
       {children}

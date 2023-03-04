@@ -1,7 +1,6 @@
 import CanvasKitInit from 'canvaskit-wasm';
 import CanvasKitWasmUrl from 'canvaskit-wasm/bin/canvaskit.wasm?url';
 import classNames from 'classnames';
-
 import { memo, useEffect, useState } from 'react';
 import type { FC } from 'react';
 
@@ -62,24 +61,24 @@ export const ProductHeroImage: FC<Props> = memo(({ product, title }) => {
         return (
           <WidthRestriction>
             <Anchor href={`/product/${product.id}`}>
-              <div className={styles.container()}>
+              <div className={styles.container}>
                 <AspectRatio ratioHeight={9} ratioWidth={16}>
-                  <img className={styles.image()} src={imageDataUrl} />
+                  <img className={styles.image} src={imageDataUrl} />
                 </AspectRatio>
 
-                <div className={styles.overlay()}>
+                <div className={styles.overlay}>
                   <p
-                    className={classNames(styles.title(), {
-                      [styles.title__desktop()]: deviceType === DeviceType.DESKTOP,
-                      [styles.title__mobile()]: deviceType === DeviceType.MOBILE,
+                    className={classNames(styles.title, {
+                      [styles.title__desktop]: deviceType === DeviceType.DESKTOP,
+                      [styles.title__mobile]: deviceType === DeviceType.MOBILE,
                     })}
                   >
                     {title}
                   </p>
                   <p
-                    className={classNames(styles.description(), {
-                      [styles.description__desktop()]: deviceType === DeviceType.DESKTOP,
-                      [styles.description__mobile()]: deviceType === DeviceType.MOBILE,
+                    className={classNames(styles.description, {
+                      [styles.description__desktop]: deviceType === DeviceType.DESKTOP,
+                      [styles.description__mobile]: deviceType === DeviceType.MOBILE,
                     })}
                   >
                     {product.name}

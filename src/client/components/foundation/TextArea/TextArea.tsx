@@ -7,8 +7,8 @@ type Props = Omit<ComponentProps<'textarea'>, 'className'> & {
 };
 
 export const TextArea: FC<Props> = ({ label, ...rest }) => (
-  <label className={styles.container()}>
+  <label className={styles.container}>
     <span>{label}</span>
-    <textarea className={styles.textarea()} {...rest} />
+    <textarea className={styles.textarea} {...rest} />
   </label>
 );

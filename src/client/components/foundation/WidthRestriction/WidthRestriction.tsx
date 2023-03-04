@@ -34,7 +34,7 @@ export const WidthRestriction: FC<Props> = ({ children }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className={styles.container()}>
+    <div ref={containerRef} className={styles.container}>
       <div className={styles.inner({ width: clientWidth })}>{isReady ? children : null}</div>
     </div>
   );

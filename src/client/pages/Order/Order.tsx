@@ -34,16 +34,16 @@ export const Order: FC = () => {
   const renderContents = () => {
     if (!authUser || order == undefined || order.items.length === 0) {
       return (
-        <div className={styles.emptyContainer()}>
-          <p className={styles.emptyDescription()}>商品がカートに入っていません</p>
+        <div className={styles.emptyContainer}>
+          <p className={styles.emptyDescription}>商品がカートに入っていません</p>
         </div>
       );
     }
 
     return (
-      <div className={styles.container()}>
-        <div className={styles.cart()}>
-          <h2 className={styles.cartHeading()}>カート</h2>
+      <div className={styles.container}>
+        <div className={styles.cart}>
+          <h2 className={styles.cartHeading}>カート</h2>
           <OrderPreview
             onRemoveCartItem={(productId) => {
               updateCartItem({
@@ -65,8 +65,8 @@ export const Order: FC = () => {
           />
         </div>
 
-        <div className={styles.addressForm()}>
-          <h2 className={styles.addressFormHeading()}>お届け先</h2>
+        <div className={styles.addressForm}>
+          <h2 className={styles.addressFormHeading}>お届け先</h2>
           <OrderForm
             onSubmit={(values) => {
               submitOrder({

@@ -48,8 +48,8 @@ export const ReviewSection: FC<Props> = memo(({ hasSignedIn, onSubmitReview, rev
     <div>
       {reviews != null ? <ReviewList reviews={reviews} /> : null}
       {hasSignedIn && (
-        <form className={styles.form()} data-testid="form-review" onSubmit={formik.handleSubmit}>
-          <div className={styles.commentTextAreaWrapper()}>
+        <form className={styles.form} data-testid="form-review" onSubmit={formik.handleSubmit}>
+          <div className={styles.commentTextAreaWrapper}>
             <TextArea
               required
               id="comment"
@@ -59,9 +59,9 @@ export const ReviewSection: FC<Props> = memo(({ hasSignedIn, onSubmitReview, rev
               rows={6}
               value={formik.values.comment}
             />
-            <p className={styles.error()}>{formik.errors.comment}</p>
+            <p className={styles.error}>{formik.errors.comment}</p>
           </div>
-          <div className={styles.submitButton()}>
+          <div className={styles.submitButton}>
             <PrimaryButton size="base" type="submit">
               送信
             </PrimaryButton>

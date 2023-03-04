@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 
-export const container = () => css`
+export const container = css`
   opacity: 1;
   position: relative;
   transition-duration: 300ms;
@@ -12,13 +12,13 @@ export const container = () => css`
   }
 `;
 
-export const image = () => css`
+export const image = css`
   height: 100%;
   object-fit: cover;
   width: 100%;
 `;
 
-export const overlay = () => css`
+export const overlay = css`
   align-items: flex-start;
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0, transparent);
   bottom: 0;
@@ -32,29 +32,29 @@ export const overlay = () => css`
   right: 0;
 `;
 
-export const title = () => css`
+export const title = css`
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 1px;
 `;
 
-export const title__desktop = () => css`
+export const title__desktop = css`
   font-size: 1.5rem;
 `;
 
-export const title__mobile = () => css`
+export const title__mobile = css`
   font-size: 1.125rem;
 `;
 
-export const description = () => css`
+export const description = css`
   color: #ffffff;
   margin-top: 8px;
 `;
 
-export const description__desktop = () => css`
+export const description__desktop = css`
   font-size: 1rem;
 `;
 
-export const description__mobile = () => css`
+export const description__mobile = css`
   font-size: 0.875rem;
 `;

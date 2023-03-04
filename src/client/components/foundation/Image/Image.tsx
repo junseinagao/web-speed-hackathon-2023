@@ -10,8 +10,8 @@ type Props = Omit<ComponentProps<'img'>, 'className'> & {
 export const Image: FC<Props> = ({ fill, ...rest }) => {
   return (
     <img
-      className={classNames(styles.container(), {
-        [styles.container__fill()]: fill === true,
+      className={classNames(styles.container, {
+        [styles.container__fill]: fill === true,
       })}
       loading="eager"
       {...rest}

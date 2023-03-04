@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 
-export const container = () => css`
+export const container = css`
   color: #222222;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@ export const container = () => css`
   width: 100%;
 `;
 
-export const input = () => css`
+export const input = css`
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   color: #222222;

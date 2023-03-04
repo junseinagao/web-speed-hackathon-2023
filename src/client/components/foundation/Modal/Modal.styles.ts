@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 
-export const container = () => css`
+export const container = css`
   left: 50%;
   position: fixed;
   top: 50%;
@@ -8,7 +8,7 @@ export const container = () => css`
   z-index: 100;
 `;
 
-export const backdrop = () => css`
+export const backdrop = css`
   background-color: black;
   inset: 0;
   opacity: 0.5;
@@ -16,7 +16,7 @@ export const backdrop = () => css`
   z-index: 100;
 `;
 
-export const inner = () => css`
+export const inner = css`
   background-color: #ffffff;
   border-radius: 8px;
   max-width: 500px;

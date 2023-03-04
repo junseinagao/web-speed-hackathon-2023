@@ -1,5 +1,4 @@
 import * as currencyFormatter from 'currency-formatter';
-
 import type { FC } from 'react';
 import { memo } from 'react';
 
@@ -19,8 +18,8 @@ export const OrderPreview: FC<Props> = memo(({ onRemoveCartItem, onUpdateCartIte
   const { totalPrice } = useTotalPrice(order);
 
   return (
-    <div className={styles.container()}>
-      <ul className={styles.itemList()}>
+    <div className={styles.container}>
+      <ul className={styles.itemList}>
         {order.items.map((item) => {
           return (
             <li key={item.product.id}>
@@ -29,7 +28,7 @@ export const OrderPreview: FC<Props> = memo(({ onRemoveCartItem, onUpdateCartIte
           );
         })}
       </ul>
-      <p className={styles.totalPrice()}>{currencyFormatter.format(totalPrice, { code: 'JPY', precision: 0 })}</p>
+      <p className={styles.totalPrice}>{currencyFormatter.format(totalPrice, { code: 'JPY', precision: 0 })}</p>
     </div>
   );
 });

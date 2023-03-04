@@ -13,21 +13,21 @@ export const Header: FC = () => {
   const handleOpenModal = useOpenModal();
 
   return (
-    <header className={styles.container()}>
+    <header className={styles.container}>
       <Anchor href="/">
-        <div className={styles.logo()}>
+        <div className={styles.logo}>
           <Image src="/icons/logo.svg" />
         </div>
       </Anchor>
       {isAuthUser ? (
         <Anchor data-testid="navigate-order" href={'/order'}>
-          <div className={styles.orderLink()}>
+          <div className={styles.orderLink}>
             <Icon color="#222222" height={20} type="FaShoppingCart" width={20} />
           </div>
         </Anchor>
       ) : (
         <button
-          className={styles.signInButton()}
+          className={styles.signInButton}
           data-testid="navigate-signin"
           onClick={() => handleOpenModal('SIGN_IN')}
         >

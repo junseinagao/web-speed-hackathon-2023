@@ -1,18 +1,18 @@
 import { css } from '@emotion/css';
 
-export const container = () => css`
+export const container = css`
   display: grid;
   gap: 8px;
   overflow-x: hidden;
 `;
 
-export const itemListWrapper = () => css`
+export const itemListWrapper = css`
   display: grid;
   overflow-x: scroll;
   place-items: center;
 `;
 
-export const itemList = () => css`
+export const itemList = css`
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -20,12 +20,12 @@ export const itemList = () => css`
   width: fit-content;
 `;
 
-export const item = () => css`
+export const item = css`
   height: 40px;
   width: 40px;
 `;
 
-export const itemSelectButton = () => css`
+export const itemSelectButton = css`
   display: inline-flex;
   height: 100%;
   opacity: 1;
@@ -33,7 +33,7 @@ export const itemSelectButton = () => css`
   width: 100%;
 `;
 
-export const itemSelectButton__disabled = () => css`
+export const itemSelectButton__disabled = css`
   opacity: 0.5;
   pointer-events: none;
 `;

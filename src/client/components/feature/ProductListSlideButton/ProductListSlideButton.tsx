@@ -20,8 +20,8 @@ type Props = {
 export const ProductListSlideButton: FC<Props> = ({ arrowType, disabled, onClick }) => {
   return (
     <button
-      className={classNames(styles.container(), {
-        [styles.container__disabled()]: disabled,
+      className={classNames(styles.container, {
+        [styles.container__disabled]: disabled,
       })}
       disabled={disabled}
       onClick={onClick}

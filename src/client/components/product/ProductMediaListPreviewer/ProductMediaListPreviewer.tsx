@@ -21,21 +21,21 @@ export const ProductMediaListPreviewer: FC<Props> = ({ product }) => {
   }
 
   return (
-    <div className={styles.container()}>
+    <div className={styles.container}>
       <AspectRatio ratioHeight={9} ratioWidth={16}>
         <MediaItemPreviewer file={product.media[activeIndex].file} />
       </AspectRatio>
-      <div className={styles.itemListWrapper()}>
-        <ul className={styles.itemList()}>
+      <div className={styles.itemListWrapper}>
+        <ul className={styles.itemList}>
           {product.media.map((media, index) => {
             const disabled = index === activeIndex;
 
             return (
-              <li key={media.id} className={styles.item()}>
+              <li key={media.id} className={styles.item}>
                 <AspectRatio ratioHeight={1} ratioWidth={1}>
                   <button
-                    className={classNames(styles.itemSelectButton(), {
-                      [styles.itemSelectButton__disabled()]: disabled,
+                    className={classNames(styles.itemSelectButton, {
+                      [styles.itemSelectButton__disabled]: disabled,
                     })}
                     disabled={disabled}
                     onClick={() => setActiveIndex(index)}

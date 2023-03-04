@@ -1,18 +1,18 @@
 import { css } from '@emotion/css';
 
-export const container = () => css`
+export const container = css`
   align-items: center;
   display: flex;
   gap: 8px;
   padding: 0 16px;
 `;
 
-export const slideButton = () => css`
+export const slideButton = css`
   flex-grow: 0;
   flex-shrink: 0;
 `;
 
-export const listWrapper = () => css`
+export const listWrapper = css`
   overflow: hidden;
   width: 100%;
 `;
@@ -30,14 +30,14 @@ export const list = ({ slideIndex, visibleItemCount }: { slideIndex: number; vis
   width: 100%;
 `;
 
-export const item = () => css`
+export const item = css`
   align-items: flex-start;
   display: inline-flex;
   justify-content: center;
   margin: 0px 8px;
 `;
 
-export const item__hidden = () => css`
+export const item__hidden = css`
   opacity: 0.5;
   pointer-events: none;
 `;
