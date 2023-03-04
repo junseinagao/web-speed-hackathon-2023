@@ -7,7 +7,7 @@
     <title><%= title %></title>
 
     <% for (var href of videos) { %>
-    <link rel="preload" as="video" fetchPriority="high" href="<%= href %>" />
+    <link as="video" fetchPriority="low" href="<%= href %>" />
     <% } %>
 
     <script type="module" src="<%= module %>"></script>
