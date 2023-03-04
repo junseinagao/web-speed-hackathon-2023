@@ -2,7 +2,7 @@ import path from 'node:path';
 
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
-import { defineConfig } from 'vite';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import topLevelAwait from 'vite-plugin-top-level-await';
 import wasm from 'vite-plugin-wasm';
@@ -28,6 +28,16 @@ export default defineConfig(async ({ mode }) => {
       cssCodeSplit: true,
       minify: mode === 'production' ? 'esbuild' : false,
       rollupOptions: {
+        output: {
+          manualChunks: (id) => {
+            if (id.includes('zipcode-ja')) {
+              return 'zipcode-ja';
+            }
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          },
+        },
         plugins: [
           mode === 'analyze' &&
             visualizer({
@@ -36,6 +46,7 @@ export default defineConfig(async ({ mode }) => {
               gzipSize: true,
               open: true,
             }),
+          splitVendorChunkPlugin(),
         ],
       },
       sourcemap: mode === 'production' ? false : 'inline',
