@@ -33,8 +33,7 @@ async function init(): Promise<void> {
 
   app.use(
     cacheControl({
-      staleIfError: 5,
-      staleWhileRevalidate: 60,
+      noCache: true,
     }),
   );
 
