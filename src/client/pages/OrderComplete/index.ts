@@ -1,1 +1,1 @@
-export { OrderComplete } from './OrderComplete';
+export { OrderComplete as default } from './OrderComplete';
