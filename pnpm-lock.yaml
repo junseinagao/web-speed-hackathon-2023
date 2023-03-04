@@ -27,7 +27,6 @@ specifiers:
   '@typescript-eslint/parser': 5.45.0
   '@vitejs/plugin-react': 3.1.0
   bcrypt: 5.1.0
-  canvaskit-wasm: 0.38.0
   classnames: 2.3.2
   cross-env: 7.0.3
   csstype: 3.1.1
@@ -94,7 +93,6 @@ dependencies:
   '@koa/router': 12.0.0
   '@types/koa-session': 5.10.6
   bcrypt: 5.1.0
-  canvaskit-wasm: 0.38.0
   classnames: 2.3.2
   currency-formatter: 1.5.9
   formik: 2.2.9_react@18.2.0
@@ -2349,10 +2347,6 @@ packages:
 
   /caniuse-lite/1.0.30001436:
     resolution: {integrity: sha512-ZmWkKsnC2ifEPoWUvSAIGyOYwT+keAaaWPHiQ9DfMqS1t6tfuyFYoWR78TeZtznkEQ64+vGXH9cZrElwR2Mrxg==}
-
-  /canvaskit-wasm/0.38.0:
-    resolution: {integrity: sha512-ZEG6lucpbQ4Ld+mY8C1Ng+PMLVP+/AX02jS0Sdl28NyMxuKSa9uKB8oGd1BYp1XWPyO2Jgr7U8pdyjJ/F3xR5Q==}
-    dev: false
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
