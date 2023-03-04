@@ -28,7 +28,7 @@ export const ProductPurchaseSection: FC<Props> = memo(
         <div className={styles.container}>
           <div className={styles.signInWrapper}>
             <span className={styles.signIn}>購入にはログインが必要です</span>
-            <PrimaryButton onClick={() => onOpenSignInModal} size="sm">
+            <PrimaryButton onClick={() => onOpenSignInModal()} size="sm">
               ログイン
             </PrimaryButton>
           </div>
