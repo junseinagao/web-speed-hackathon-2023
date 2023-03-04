@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import type { ChangeEventHandler, FC } from 'react';
+import { startTransition, useCallback } from 'react';
 import zipcodeJa from 'zipcode-ja';
 
 import { PrimaryButton } from '../../foundation/PrimaryButton';
@@ -29,17 +30,28 @@ const OrderForm: FC<Props> = ({ onSubmit }) => {
     onSubmit,
   });
 
-  const handleZipcodeChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-    formik.handleChange(event);
+  const updateWithZipcode = useCallback(
+    (zipCode: string) => {
+      if (zipCode.length !== 7) return;
+      const address = [...(structuredClone(zipcodeJa)[zipCode]?.address ?? [])];
+      const prefecture = address.unshift();
+      const city = address.join(' ');
 
-    const zipCode = event.target.value;
-    const address = [...(structuredClone(zipcodeJa)[zipCode]?.address ?? [])];
-    const prefecture = address.unshift();
-    const city = address.join(' ');
+      formik.setFieldValue('prefecture', prefecture);
+      formik.setFieldValue('city', city);
+    },
+    [formik],
+  );
 
-    formik.setFieldValue('prefecture', prefecture);
-    formik.setFieldValue('city', city);
-  };
+  const handleZipcodeChange: ChangeEventHandler<HTMLInputElement> = useCallback(
+    async (event) => {
+      formik.handleChange(event);
+      startTransition(() => {
+        updateWithZipcode(event.target.value);
+      });
+    },
+    [formik, updateWithZipcode],
+  );
 
   return (
     <div className={styles.container()}>
