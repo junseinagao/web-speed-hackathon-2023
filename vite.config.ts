@@ -24,14 +24,10 @@ export default defineConfig(async ({ mode }) => {
 
   return {
     build: {
-      assetsInlineLimit: 20480,
-      cssCodeSplit: false,
-      cssTarget: 'es6',
-      minify: false,
+      assetsInlineLimit: 4096,
+      cssCodeSplit: true,
+      minify: 'esbuild',
       rollupOptions: {
-        output: {
-          experimentalMinChunkSize: 40960,
-        },
         plugins: [
           mode === 'analyze' &&
             visualizer({
@@ -42,7 +38,7 @@ export default defineConfig(async ({ mode }) => {
             }),
         ],
       },
-      target: 'es2015',
+      target: 'esnext',
     },
     plugins: [
       react(),
