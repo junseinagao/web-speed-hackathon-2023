@@ -1,10 +1,12 @@
 import http from 'node:http';
+import zlib from 'node:zlib';
 
 import { koaMiddleware } from '@as-integrations/koa';
 import gracefulShutdown from 'http-graceful-shutdown';
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import cacheControl from 'koa-cache-control';
+import compress from 'koa-compress';
 import logger from 'koa-logger';
 import route from 'koa-route';
 import send from 'koa-send';
@@ -16,7 +18,6 @@ import { dataSource } from './data_source';
 import { initializeApolloServer } from './graphql';
 import { initializeDatabase } from './utils/initialize_database';
 import { rootResolve } from './utils/root_resolve';
-
 const PORT = Number(process.env.PORT ?? 8080);
 
 async function init(): Promise<void> {
@@ -37,6 +38,20 @@ async function init(): Promise<void> {
       staleWhileRevalidate: 60,
     }),
   );
+  app.use(
+    compress({
+      br: {},
+      deflate: false,
+      gzip: {
+        flush: zlib.constants.Z_SYNC_FLUSH,
+      },
+    }),
+  );
+
+  app.use((ctx, next) => {
+    ctx.compress = true;
+    return next();
+  });
 
   const apolloServer = await initializeApolloServer();
   await apolloServer.start();

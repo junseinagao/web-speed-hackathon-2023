@@ -38,6 +38,7 @@ export default defineConfig(async ({ mode }) => {
             }),
         ],
       },
+      sourcemap: mode === 'production' ? false : 'inline',
       target: 'esnext',
     },
     plugins: [
