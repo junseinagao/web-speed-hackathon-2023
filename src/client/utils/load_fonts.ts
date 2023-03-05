@@ -7,21 +7,21 @@ type FontFaceSource = {
 const FONT_FACE_SOURCES: FontFaceSource[] = [
   {
     descripter: {
-      display: 'block',
+      display: 'swap',
       style: 'normal',
       weight: '700',
     },
     family: 'Noto Serif JP',
-    source: "url('/fonts/NotoSerifJP-Bold.otf')",
+    source: "url('/fonts/NotoSerifJP-Bold.subset.otf')",
   },
   {
     descripter: {
-      display: 'block',
+      display: 'swap',
       style: 'normal',
       weight: '400',
     },
     family: 'Noto Serif JP',
-    source: "url('/fonts/NotoSerifJP-Regular.otf')",
+    source: "url('/fonts/NotoSerifJP-Regular.subset.otf')",
   },
 ];
 

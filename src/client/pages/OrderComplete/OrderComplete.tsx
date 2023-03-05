@@ -18,14 +18,12 @@ import * as styles from './OrderComplete.styles';
 
 export const OrderComplete: FC = () => {
   const navigate = useNavigate();
-  const [isReadyFont, setIsReadyFont] = useState(false);
+  const [isReadyFont] = useState(false);
   const { authUserLoading, isAuthUser } = useAuthUser();
   const { recommendation } = useRecommendation();
 
   useEffect(() => {
-    loadFonts().then(() => {
-      setIsReadyFont(true);
-    });
+    loadFonts();
   }, []);
 
   if (!recommendation || !isReadyFont || authUserLoading) {
