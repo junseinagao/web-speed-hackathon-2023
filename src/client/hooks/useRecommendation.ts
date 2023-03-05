@@ -4,9 +4,15 @@ import type { GetRecommendationsQueryResponse } from '../graphql/queries';
 import { GetRecommendationsQuery } from '../graphql/queries';
 
 export const useRecommendation = () => {
-  const { data } = useSuspenseQuery<GetRecommendationsQueryResponse>(GetRecommendationsQuery);
+  const recommendationsResult = useSuspenseQuery<GetRecommendationsQueryResponse>(GetRecommendationsQuery);
 
   const hour = window.Temporal.Now.plainTimeISO().hour;
-  const recommendation = data.recommendations[hour % data.recommendations.length];
+  const recommendations = recommendationsResult?.data?.recommendations;
+
+  if (recommendations == null) {
+    return { recommendation: undefined };
+  }
+
+  const recommendation = recommendations[hour % recommendations.length];
   return { recommendation };
 };

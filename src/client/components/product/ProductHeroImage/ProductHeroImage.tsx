@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { memo } from 'react';
 import type { FC } from 'react';
 
-import { useRecommendation } from '../../../hooks/useRecommendation';
+import type { ProductFragmentResponse } from '../../../graphql/fragments';
 import { Anchor } from '../../foundation/Anchor';
 import { AspectRatio } from '../../foundation/AspectRatio';
 import { DeviceType, GetDeviceType } from '../../foundation/GetDeviceType';
@@ -11,19 +11,19 @@ import { WidthRestriction } from '../../foundation/WidthRestriction';
 import * as styles from './ProductHeroImage.styles';
 
 type Props = {
+  product: ProductFragmentResponse;
   title: string;
 };
 
-export const ProductHeroImage: FC<Props> = memo(({ title }) => {
-  const { recommendation } = useRecommendation();
-  const thumbnailFile = recommendation.product.media.find((productMedia) => productMedia.isThumbnail)?.file;
+export const ProductHeroImage: FC<Props> = memo(({ product, title }) => {
+  const thumbnailFile = product.media.find((productMedia) => productMedia.isThumbnail)?.file;
 
   return (
     <GetDeviceType>
       {({ deviceType }) => {
         return (
           <WidthRestriction>
-            <Anchor href={`/product/${recommendation.product.id}`}>
+            <Anchor href={`/product/${product.id}`}>
               <div className={styles.container}>
                 <AspectRatio ratioHeight={9} ratioWidth={16}>
                   <img
@@ -51,7 +51,7 @@ export const ProductHeroImage: FC<Props> = memo(({ title }) => {
                       [styles.description__mobile]: deviceType === DeviceType.MOBILE,
                     })}
                   >
-                    {recommendation.product.name}
+                    {product.name}
                   </p>
                 </div>
               </div>

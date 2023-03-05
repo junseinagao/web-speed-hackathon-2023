@@ -4,7 +4,9 @@ import type { GetFeatureSectionsQueryResponse } from '../graphql/queries';
 import { GetFeatureSectionsQuery } from '../graphql/queries';
 
 export const useFeatures = () => {
-  const { data } = useSuspenseQuery<GetFeatureSectionsQueryResponse>(GetFeatureSectionsQuery);
+  const featuresResult = useSuspenseQuery<GetFeatureSectionsQueryResponse>(GetFeatureSectionsQuery);
 
-  return { features: data.features };
+  const features = featuresResult.data?.features;
+
+  return { features };
 };
